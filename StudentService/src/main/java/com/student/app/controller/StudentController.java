@@ -25,7 +25,7 @@ public class StudentController {
 		lst1.add(student);
 		Student student2 = new Student("Srushti", "class-10");
 		lst1.add(student2);
-		schoolDB.put("myshool1", lst1);
+		schoolDB.put("myschool1", lst1);
 		
 	}
 	
