@@ -1,0 +1,16 @@
+package com.example.reporitory;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.entiry.Product;
+
+public interface iProductRepository extends CrudRepository <Product, Integer> {
+	List<Product> getAllProducts();
+	Integer addProdct(Product product);
+	Product gtProduct(Integer productID);
+}

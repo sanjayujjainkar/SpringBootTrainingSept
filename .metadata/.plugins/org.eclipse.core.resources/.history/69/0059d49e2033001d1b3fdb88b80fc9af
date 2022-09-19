@@ -1,0 +1,13 @@
+package com.example.reporitory;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+
+import com.example.entiry.Product;
+
+public interface iProductRepository implements SimpleJpaRepository <Product, Integer> {
+
+	
+
+}

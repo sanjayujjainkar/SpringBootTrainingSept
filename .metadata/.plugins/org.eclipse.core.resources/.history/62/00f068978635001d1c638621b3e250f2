@@ -1,0 +1,28 @@
+package com.student.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.student.entity.Student;
+
+@RestController
+public class StudentController {
+	
+	static Map<String, List<Student>> schoolDB = new HashMap<String, List<Student>>();
+	
+	static {
+		
+		List<Student> lst1 = new ArrayList<>();
+		Student student = new Student("Sanjay", "class-11");
+		lst1.add(student);
+		Student student2 = new Student("Srushti", "class-10");
+		lst1.add(student2);
+		schoolDB.put("School 1", lst1);
+		
+	}
+
+}
