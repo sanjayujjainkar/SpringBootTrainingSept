@@ -23,7 +23,8 @@ public class SchoolServiceController {
 	
 	@GetMapping("/{school}")
 	String getStudent(@PathVariable("school") String school) {
-		String requestURL = "http://localhost:9091/getStudentDetailForSchool/"+school;
+		//String requestURL = "http://localhost:9091/getStudentDetailForSchool/"+school;
+		String requestURL = "http://student.service/getStudentDetailForSchool/"+school;
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 		
@@ -32,7 +33,8 @@ public class SchoolServiceController {
 		String student = response.getBody();
 		System.out.println("Name of School:"+ school + "\n");
 		System.out.println("Name of Student:"+ student);
-		return school + "," + student;
+		String strhtml = "<html><h1>My School Detail</h2></br></html>";
+		return strhtml + school + "," + student;
 		
 	}
 
