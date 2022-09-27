@@ -67,7 +67,7 @@ public class SecurityControllerTest {
 	@Test
 	public void testEmployeePOST() throws Exception {
 		Employee employee = new Employee("test","dev");
-		ResultActions  responseEntity = processAPIRequest(postURL, HttpMethod.POST, null, employee,admin_name1, admin_password1);
+		ResultActions  responseEntity = processAPIRequest("/post", HttpMethod.POST, null, employee,"admin123", "password");
 		responseEntity.andExpect(status().isOk());
 		ObjectMapper objectMapper = new ObjectMapper();
 		
