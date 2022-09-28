@@ -19,17 +19,17 @@ public class BookingController {
 	@Autowired
 	private BookingService service;
 	
-	@GetMapping
+	@GetMapping("/user/getBookings")
 	List<Booking> getBookings() {
 		return service.getBookings();
 	}
 	
-	@PostMapping("/addBooking")
+	@PostMapping("/user/addBooking")
 	Booking addBooking(@RequestBody Booking booking) {
 		return service.addBooking(booking);
 	}
 	
-	@DeleteMapping("/deleteBooking/{id}")
+	@DeleteMapping("/user/deleteBooking/{id}")
 	Booking deleteBooking(@PathVariable int id) {
 		return service.deleteBooking(id);
 	}

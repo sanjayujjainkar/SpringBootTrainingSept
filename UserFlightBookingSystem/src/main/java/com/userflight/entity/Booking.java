@@ -10,10 +10,10 @@ public class Booking {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Integer id;
-	String user;
-	int flightid;
-	int seatcount;
+	private int id;
+	private String user;
+	private int flightid;
+	private int seatcount;
 	
 	public Booking(int id, String user, int flightid, int seatcount) {
 		super();

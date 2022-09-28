@@ -20,22 +20,22 @@ public class FlightAdminController {
 	@Autowired
 	private FlightServiceImpl flightService;
 	
-	@GetMapping("/getFlights")
+	@GetMapping("/admin/getFlights")
 	public List<Flight> getAllFlights() {
 		return flightService.getAllFlights();
 	}
 	
-	@PostMapping("/addFlight")
+	@PostMapping("/admin/addFlight")
 	public Flight addFlight(@RequestBody Flight flight) {
 		return flightService.addFlight(flight);
 	}
 	
-	@PostMapping("/updateFlight/{flightID}")
+	@PostMapping("/admin/updateFlight/{flightID}")
 	public Flight updateFlight(@PathVariable Integer flightID, @RequestBody Flight flight) {
 		return flightService.updateFlight(flightID, flight);
 	}
 	
-	@PostMapping("/deleteFlight/{flightID}")
+	@PostMapping("/admin/deleteFlight/{flightID}")
 	public Flight deleteFlight(@PathVariable Integer flightID) {
 		return flightService.deleteFlight(flightID);
 	}
