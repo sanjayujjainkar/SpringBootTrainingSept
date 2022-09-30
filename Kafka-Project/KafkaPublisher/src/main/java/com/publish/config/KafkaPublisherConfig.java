@@ -21,8 +21,6 @@ public class KafkaPublisherConfig {
 		map.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		map.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
 		return new DefaultKafkaProducerFactory<String, Object>(map);
-		
-		
 	}
 	
 	@Bean

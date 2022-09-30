@@ -1,20 +1,17 @@
-package com.gate.config;
+package com.flightadmin.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
-
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-
 @EnableWebSecurity
-public class GatewaySecurityConfiguration extends WebSecurityConfigurerAdapter {
-
-	@Override 
-	protected void configure(HttpSecurity http) throws Exception { 
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
 		http.httpBasic().and().authorizeRequests()
 		/*.antMatchers(HttpMethod.POST, "/admin/**").hasAnyRole("ADMIN")
 		.antMatchers(HttpMethod.PUT, "/admin/**").hasAnyRole("ADMIN", "USER")
@@ -26,9 +23,12 @@ public class GatewaySecurityConfiguration extends WebSecurityConfigurerAdapter {
 		//.antMatchers(HttpMethod.GET, "/admin/**").authenticated();
 		//.and().csrf().disable().headers().frameOptions().disable(); 
 	}
-
+	
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		// TODO Auto-generated method stub
+		super.configure(auth);
 		auth.inMemoryAuthentication()
 		/*.withUser("user123").password("{noop}password").roles("USER").and()
 		.withUser("admin123").password("{noop}password").roles("ADMIN").and()

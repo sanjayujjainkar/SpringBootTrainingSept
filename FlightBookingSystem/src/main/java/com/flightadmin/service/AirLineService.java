@@ -7,7 +7,6 @@ import com.flightadmin.entity.AirLine;
 
 public interface AirLineService {
 	
-	
 	public List<AirLine> getAllAirLines();
 	
 	public AirLine addAirLine(AirLine airline);
@@ -15,6 +14,5 @@ public interface AirLineService {
 	public AirLine updateAirLine(Integer id, AirLine airLine);
 	
 	public AirLine deleteAirLine(Integer id);
-	
 	
 }
