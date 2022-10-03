@@ -10,26 +10,25 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		// TODO Auto-generated method stub
+
+	@Override 
+	protected void configure(HttpSecurity http) throws Exception { 
+		//TODO Auto-generated method stub 
 		http.httpBasic().and().authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/broker/**").hasAnyRole("OWNER", "BROKER")
-		.antMatchers(HttpMethod.POST, "/broker/**").hasRole("BROKER")
-		.antMatchers(HttpMethod.PUT, "/broker/**").hasRole("BROKER")
-		.antMatchers(HttpMethod.DELETE, "/broker/**").hasRole("BROKER")
-		.and().csrf().disable().headers()
-		.frameOptions().disable();
+		  .antMatchers(HttpMethod.GET, "/broker/**").hasAnyRole("ADMIN", "USER") 
+		  .antMatchers(HttpMethod.POST, "/broker/**").hasRole("ADMIN")
+		  .antMatchers(HttpMethod.PUT, "/broker/**").hasRole("ADMIN")
+		  .antMatchers(HttpMethod.DELETE, "/broker/**").hasRole("ADMIN")
+		  .and().csrf().disable().headers() .frameOptions().disable(); 
 	}
-	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// TODO Auto-generated method stub
+
+	@Override 
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception { 
+		// TODO Auto-generated method stub 
 		auth.inMemoryAuthentication()
-		.withUser("owner123").password("{noop}password").roles("OWNER").and()
-		.withUser("broker123").password("{noop}password").roles("BROKER").and()
-		.withUser("broker").password("{noop}password").roles("BROKER");
+		  .withUser("admin123").password("{noop}password").roles("ADMIN").and()
+		  .withUser("user123").password("{noop}password").roles("USER").and()
+		  .withUser("admin").password("{noop}password").roles("ADMIN"); 
 	}
 
 }
