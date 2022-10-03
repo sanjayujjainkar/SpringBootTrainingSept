@@ -7,6 +7,15 @@ This repository contains few Spring application. The prominent app is "Car lease
 2. Carbroker : This app will be used by broker to maintain and manage the customer record.
 3. CarleaseRate : This is to calcuate t/e lease rate based on the cost of car and usage parameters.
 
+##Component link:
+ - caradmin and carbroker:  https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/CarLeaseSystem
+
+ - car lease rate : https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/CarLeaseRate
+
+ - API Gateway : https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/Gateway-Service
+
+ - Eureka Server : https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/eServer
+
 
 ### Caradmin exposes following REST APIs:
 > - /admin/getCars : GET - Fetch list of cars
