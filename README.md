@@ -22,15 +22,18 @@ This repository contains few Spring application. The prominent app is "Car lease
 > - /admin/addCar : POST - Add a car
 > - /admin/updateCar/{id} : PUT - Update the car
 > - /admin/delete/{id} : Delete - Delete the car 
+> - For detail refer swagger documentation : http://localhost:7081/v2/api-docs
 
 ### Carbroker exposes following REST APIs:
 > - /broker/getCustomers : GET - Fetch list of Customers
 > - /broker/addCustomer : POST - Add a Customer
 > - /broker/updateCustomer/{id} : PUT - Update the Customer
 > - /broker/deleteCustomer/{id} : Delete - Delete the Customer
+> - For detail refer swagger documentation : http://localhost:7082/v2/api-docs
 
 ### CarleaseRate: 
 > - /broker/leaserate
+> - For detail refer swagger documentation : http://localhost:7083/v2/api-docs
 
 ### System architecture:
 ![image](https://user-images.githubusercontent.com/16114372/193628501-c3eefb25-6e28-4f0e-819d-5a1565b42cf2.png)
