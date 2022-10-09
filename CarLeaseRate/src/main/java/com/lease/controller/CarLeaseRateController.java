@@ -11,6 +11,11 @@ import com.lease.entity.CarUsageContract;
 @RequestMapping("/lease")
 public class CarLeaseRateController {
 	
+	/**
+	 * 
+	 * @param carUsageContract : This object contains car cost, mileage, lease period, roi 
+	 * @return : lease rate based on the parameters in carUsageContract
+	 */
 	@PostMapping("/rate") 
 	public CarUsageContract leaseRate(@RequestBody CarUsageContract carUsageContract) {
 		
