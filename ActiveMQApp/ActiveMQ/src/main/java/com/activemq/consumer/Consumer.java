@@ -7,9 +7,8 @@ import org.springframework.stereotype.Component;
 public class Consumer {
 
 	@JmsListener(destination = "standalone-queue")
-	public String consumeMessage(String msg) {
+	public void consumeMessage(String msg) {
 		System.out.println("Message Consumed:"+ msg);
-		return msg;
 	}
 	
 }

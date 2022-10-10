@@ -25,6 +25,14 @@ import com.carbroker.entity.CarUsageContract;
 import com.carbroker.entity.Customer;
 import com.carbroker.service.CustomerService;
 
+/**
+ * 
+ * @author Sanjay Ujjainkar
+ * <p> This class is a controller which exposes CRUD APIs to manager Customer record. 
+ * Broker, act as admin, will mainly use these APIs. 
+ *
+ */
+
 @RequestMapping("/broker")
 @RestController
 public class CarBrokerController {
@@ -37,26 +45,49 @@ public class CarBrokerController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
+	/**
+	 * @apiNote : GET method to fetch all customer record from MySQL. 
+	 * @return List of all customers from persistent storage.
+	 */
 	@GetMapping("/getCustomers")
 	public List<Customer> getCustomers() {
 		return service.getCustomers();
 	}
 	
+	/**
+	 * @apiNote POST API to add a customer in persistent storage - MySQL.
+	 * @param customer to be added in storage.
+	 * @return added customer object.
+	 */
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody Customer customer) {
 		return service.addCustomer(customer);
 	}
 	
+	/**
+	 * @param id of customer whose record to be edited. 
+	 * @param customer object with updated record.
+	 * @return updated customer.
+	 */
 	@PutMapping("/updateCustomer/{id}")
 	public Customer updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
 		return service.updateCustomer(id, customer);
 	}
 
+	/**
+	 * 
+	 * @param id of customer to be deleted
+	 * @return deleted customer
+	 */
 	@DeleteMapping("/deleteCustomer/{id}")
 	public Customer deleteCustomer(@PathVariable Integer id) {
 		return service.deleteCustomer(id);
 	}
 	
+	/**
+	 * @apiNote : this micro-service will call another micro-service (cadadmin) to fetch the car details
+	 * @return json string with all cars
+	 */
 	@GetMapping("/getCars")
 	public String getCars() {
 		String requestURL = CAR_SERVICE_URL+"/getCars";
@@ -68,6 +99,11 @@ public class CarBrokerController {
 		return cars;
 	}
 	
+	/**
+	 * 
+	 * @param carUsaeDetail : This object contains car cost, mileage, lease period, roi 
+	 * @return : lease rate based on the parameters in carUsaeDetail
+	 */
 	@PostMapping("/leaserate")
 	public String getLeaseRate(@RequestBody CarUsageContract carUsaeDetail) {
 		HttpHeaders headers = new HttpHeaders();

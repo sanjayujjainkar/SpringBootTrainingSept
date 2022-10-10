@@ -9,6 +9,16 @@ import org.springframework.stereotype.Service;
 import com.caradmin.entity.Car;
 import com.caradmin.repo.CarRepository;
 
+
+/**
+ * 
+ * @author Sanjay Ujjainkar
+ * @implNote CarServiceImpl is a Service that implements custom interface CarService. 
+ * <p> This service exposes functions that interacts with CarRepository for actual DB updates. </p>
+ * 
+ *
+ */
+
 @Service
 public class CarServiceImpl implements CarService {
 	
