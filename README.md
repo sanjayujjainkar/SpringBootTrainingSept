@@ -58,5 +58,8 @@ Open postman and access the
 >> - admin123/password
 >> - user123/password
 
+### Futher enhancement / fixes:
+>> Handling error condition by defining custom exception RecordNotFoundException.
+>> JWT configuration on Eureka server.
 
 
