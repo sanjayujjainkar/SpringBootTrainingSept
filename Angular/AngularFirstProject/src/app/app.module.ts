@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentRegistrationComponent } from './components/student-registration/student-registration.component'
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ContactusComponent
+    ContactusComponent,
+    StudentRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

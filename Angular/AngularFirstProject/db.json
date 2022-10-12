@@ -1,0 +1,29 @@
+{
+  "students": [
+    {
+      "firstname": "sanjay",
+      "lastname": "Ujjainkar",
+      "class": 12,
+      "age": 30,
+      "id": 1
+    },
+    {
+      "firstname": "Yogita",
+      "lastname": "Ujjainkar",
+      "age": 30,
+      "class": 17,
+      "subject": "Electronics",
+      "gender": "Female",
+      "id": 2
+    },
+    {
+      "firstname": "Srushti",
+      "lastname": "Ujjainkar",
+      "age": 15,
+      "class": 10,
+      "subject": "All",
+      "gender": "Female",
+      "id": 3
+    }
+  ]
+}
