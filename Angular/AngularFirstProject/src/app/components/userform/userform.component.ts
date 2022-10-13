@@ -10,6 +10,7 @@ import { StudentsService } from 'src/app/Services/students.service';
 export class UserformComponent implements OnInit {
 
   student : Student = new Student();
+  name : String = "Sanjay";
 
 
   save() {

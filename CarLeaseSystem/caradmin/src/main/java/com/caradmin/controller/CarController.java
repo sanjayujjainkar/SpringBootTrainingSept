@@ -3,6 +3,8 @@ package com.caradmin.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,6 +42,16 @@ public class CarController {
 	}
 	
 	/**
+	 * 
+	 * @param id of car to be retrieve
+	 * @return car detail
+	 */
+	@GetMapping("/getCar/{id}")
+	public Car getCar(@PathVariable Integer id) {
+		return service.getCar(id);
+	}
+	
+	/**
 	 * @apiNote : POST API to add a car in persistent storage MySQL.
 	 * @param car
 	 * @return added car
@@ -56,8 +68,9 @@ public class CarController {
 	 * @return updated car object.
 	 */
 	@PutMapping("/updateCar/{id}")
-	public Car updateCar(@PathVariable Integer id, @RequestBody Car car) {
-		return service.updateCar(id, car);
+	public ResponseEntity<Car> updateCar(@PathVariable Integer id, @RequestBody Car car) {
+		//return service.updateCar(id, car);
+		return new ResponseEntity<Car>(service.updateCar(id, car), HttpStatus.OK);
 	}
 	
 	/**

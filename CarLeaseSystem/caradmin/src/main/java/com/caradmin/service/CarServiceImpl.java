@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.caradmin.entity.Car;
+import com.caradmin.exception.ResourceNotFoundException;
 import com.caradmin.repo.CarRepository;
 
 
@@ -29,6 +30,12 @@ public class CarServiceImpl implements CarService {
 	public List<Car> getCars() {
 		return repository.findAll();
 	}
+	
+	@Override
+	public Car getCar(Integer id) {
+		return repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Car", "id", id));
+	}
 
 	@Override
 	public Car addCar(Car car) {
@@ -37,21 +44,22 @@ public class CarServiceImpl implements CarService {
 
 	@Override
 	public Car updateCar(Integer id, Car car) {
-		Optional<Car> cartemp = repository.findById(id);
-		Car oldCar = cartemp.get();
-		oldCar.setMake(car.getMake());
-		oldCar.setModel(car.getModel());
-		oldCar.setVersion(car.getVersion());
-		oldCar.setDoors(car.getDoors());
-		oldCar.setGrossprice(car.getGrossprice());
-		oldCar.setNetprice(car.getNetprice());
-		return car;
+		Car existingCar = repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Car", "id", id));
+		existingCar.setMake(car.getMake());
+		existingCar.setModel(car.getModel());
+		existingCar.setVersion(car.getVersion());
+		existingCar.setDoors(car.getDoors());
+		existingCar.setGrossprice(car.getGrossprice());
+		existingCar.setNetprice(car.getNetprice());
+		return existingCar;
 	}
 
 	@Override
 	public Car deleteCar(Integer id) {
-		Optional<Car> cartemp = repository.findById(id);
-		Car car = cartemp.get();
+		Car car = repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Car", "id", id));
+		//Car car = cartemp.get();
 		repository.delete(car);
 		return car;
 	}
