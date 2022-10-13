@@ -8,6 +8,8 @@ public interface CarService {
 	
 	public List<Car> getCars();
 	
+	public Car getCar(Integer id);
+	
 	public Car addCar(Car car);
 	
 	public Car updateCar(Integer id, Car car);

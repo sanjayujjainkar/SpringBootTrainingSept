@@ -55,6 +55,16 @@ public class CarBrokerController {
 	}
 	
 	/**
+	 * @apiNote : GET method to fetch a particular customer record from MySQL.
+	 * @param id of customer 
+	 * @return customer with specified id. 
+	 */
+	@GetMapping("/getCustomer/{id}")
+	public Customer getCustomer(@PathVariable Integer id) {
+		return service.getCustomer(id);
+	}
+	
+	/**
 	 * @apiNote POST API to add a customer in persistent storage - MySQL.
 	 * @param customer to be added in storage.
 	 * @return added customer object.

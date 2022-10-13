@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.carbroker.entity.Customer;
+import com.carbroker.exception.ResourceNotFoundException;
 import com.carbroker.repo.CustomerRepository;
 
 @Service
@@ -19,6 +21,12 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getCustomers() {
 		return repository.findAll();
 	}
+	
+	@Override
+	public Customer getCustomer(Integer id) {
+		return repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Customer", "id", id));
+	}
 
 	@Override
 	public Customer addCustomer(Customer customer) {
@@ -27,22 +35,22 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer updateCustomer(Integer id, Customer customer) {
-		Optional<Customer> custemp = repository.findById(id);
-		Customer oldCustomer = custemp .get();
-		oldCustomer.setName(customer.getName());
-		oldCustomer.setStreet(customer.getStreet());
-		oldCustomer.setHomenumber(customer.getHomenumber());
-		oldCustomer.setPlace(customer.getPlace());
-		oldCustomer.setZipcode(customer.getZipcode());
-		oldCustomer.setEmail(customer.getEmail());
-		oldCustomer.setPhone(customer.getPhone());
-		return customer;
+		Customer existingCustomer = repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Customer", "id", id));
+		existingCustomer.setName(customer.getName());
+		existingCustomer.setStreet(customer.getStreet());
+		existingCustomer.setHomenumber(customer.getHomenumber());
+		existingCustomer.setPlace(customer.getPlace());
+		existingCustomer.setZipcode(customer.getZipcode());
+		existingCustomer.setEmail(customer.getEmail());
+		existingCustomer.setPhone(customer.getPhone());
+		return existingCustomer;
 	}
 
 	@Override
 	public Customer deleteCustomer(Integer id) {
-		Optional<Customer> custemp = repository.findById(id);
-		Customer customer = custemp.get();
+		Customer customer = repository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Customer", "id", id));
 		repository.delete(customer);
 		return customer;
 	}
