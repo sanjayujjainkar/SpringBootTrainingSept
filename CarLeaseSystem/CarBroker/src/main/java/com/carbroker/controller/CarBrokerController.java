@@ -130,7 +130,7 @@ public class CarBrokerController {
 	}
 	
 	public String defaultLease(CarUsageContract carUsaeDetail) {
-		return "Server is down, Default response:Euro 80 per month";
+		return "Server is down.\nDefault response:Euro 80 per month.\nIts Min car lease amount";
 	}
 	
 }
