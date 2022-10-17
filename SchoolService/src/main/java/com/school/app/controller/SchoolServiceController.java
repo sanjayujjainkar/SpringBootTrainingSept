@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,6 +25,9 @@ public class SchoolServiceController {
 	RestTemplate restTemplate;
 	
 	
+	@HystrixCommand(fallbackMethod = "defaultMethod", commandProperties = {
+			@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+	})
 	@GetMapping("/{school}")
 	String getStudent(@PathVariable("school") String school) {
 		//String requestURL = "http://localhost:9091/getStudentDetailForSchool/"+school;
@@ -36,6 +43,10 @@ public class SchoolServiceController {
 		String strhtml = "<html><h1>My School Detail</h2></br></html>";
 		return strhtml + school + "," + student;
 		
+	}
+	
+	public String defaultMethod(String school) {
+		return "Resposne from default method, Server is down";
 	}
 
 }
