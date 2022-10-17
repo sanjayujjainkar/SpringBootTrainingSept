@@ -24,6 +24,8 @@ import org.springframework.web.client.RestTemplate;
 import com.carbroker.entity.CarUsageContract;
 import com.carbroker.entity.Customer;
 import com.carbroker.service.CustomerService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 /**
  * 
@@ -114,6 +116,9 @@ public class CarBrokerController {
 	 * @param carUsaeDetail : This object contains car cost, mileage, lease period, roi 
 	 * @return : lease rate based on the parameters in carUsaeDetail
 	 */
+	@HystrixCommand(fallbackMethod = "defaultLease", commandProperties = {
+			@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+	})
 	@PostMapping("/leaserate")
 	public String getLeaseRate(@RequestBody CarUsageContract carUsaeDetail) {
 		HttpHeaders headers = new HttpHeaders();
@@ -122,6 +127,10 @@ public class CarBrokerController {
 		return restTemplate.exchange(
 				LEASE_SERVICE_URL, HttpMethod.POST, entity, String.class).getBody();
 		
+	}
+	
+	public String defaultLease(CarUsageContract carUsaeDetail) {
+		return "Server is down.\nDefault response:Euro 80 per month.\nIts Min car lease amount";
 	}
 	
 }
