@@ -44,10 +44,11 @@ gateway-service:8085, caradmin-service:7081, carbroker-service:7082 and leaserat
 MySQL is used to store the car and customer information.
 
 ### Operating instruction:
-Open postman and access the 
+Launch MySQL on PORT:3306
+Open postman and access the following major APIs. Refer Swagger documenation for all APIs
  - caradmin service : http://localhost:8085/admin/getCars.
  - For broker service : http://localhost:8085/broker/getCustomers
- - Lease rate : http://localhost:7082/broker/leaserate
+ - Lease rate : http://localhost:8085/broker/leaserate
 
 ### In memory authentication
 > Users for caradmin:
@@ -59,7 +60,6 @@ Open postman and access the
 >> - user123/password
 
 ### Futher enhancement / fixes:
->> Handling error condition by defining custom exception RecordNotFoundException.
 >> JWT configuration on Eureka server.
 
 
