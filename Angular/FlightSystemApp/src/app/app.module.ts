@@ -10,6 +10,7 @@ import { CarleaseComponent } from './components/carlease/carlease.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FlightadminComponent } from './components/flightadmin/flightadmin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AirlineComponent } from './components/airline/airline.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     CarbrokerComponent,
     CarleaseComponent,
     NavbarComponent,
-    FlightadminComponent
+    FlightadminComponent,
+    AirlineComponent
   ],
   imports: [
     BrowserModule,
