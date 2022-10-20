@@ -5,8 +5,8 @@ import { CarbrokerComponent } from './components/carbroker/carbroker.component';
 import { CarleaseComponent } from './components/carlease/carlease.component';
 import { FlightadminComponent } from './components/flightadmin/flightadmin.component';
 
-const routes: Routes = [{path:"caradmin", component:CaradminComponent}
-,{path:"carbroker", component:CarbrokerComponent}
+const routes: Routes = [
+{path:"carbroker", component:CarbrokerComponent}
 ,{path:"carlease", component:CarleaseComponent}
 ,{path:"flightadmin", component:FlightadminComponent}];
 
