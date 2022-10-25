@@ -1,0 +1,46 @@
+<p>flighcreate works!</p>
+
+<h1 style="text-align: center; background-color: #f7b285" class="display-1">
+    Add New Flight Detail
+  </h1>
+  <br/>
+  <form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Airline</label>
+        <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.airline" class="form-control" id="validationCustom01" placeholder="Airline Name" required>
+        <div class="valid-feedback">
+            
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">From Airport</label>
+        <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.source"  class="form-control" id="validationCustom02" placeholder="Takeoff Airport" required>
+        <div class="valid-feedback">
+            
+        </div>
+    </div>
+  
+    <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Destination Airport</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="flight.destination"  placeholder="Ex-Newyork" type="text" class="form-control" id="validationCustom03" required>
+        <div class="invalid-feedback">
+            
+        </div>
+    </div>
+  
+    <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Date</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="flight.date"  type="text" class="form-control" id="validationCustom05" required>
+        <div class="invalid-feedback">
+            
+        </div>
+    </div>
+    
+    
+        <div style="text-align: center;" class="col-12">
+            <button (click)="save()" class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    
+  
+  
+  </form>

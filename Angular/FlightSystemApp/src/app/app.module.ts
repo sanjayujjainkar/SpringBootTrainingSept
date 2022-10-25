@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FlightadminComponent } from './components/flightadmin/flightadmin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AirlineComponent } from './components/airline/airline.component';
+import { FlighcreateComponent } from './components/flighcreate/flighcreate.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AirlineComponent } from './components/airline/airline.component';
     CarleaseComponent,
     NavbarComponent,
     FlightadminComponent,
-    AirlineComponent
+    AirlineComponent,
+    FlighcreateComponent
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,8 @@ const BASE_URL = "http://localhost:8091/admin"
 })
 export class FlightserviceService {
 
-  createStudent(flight : {airline:String, source:String, destination:String, date:String}) {
-    return this.http.post(BASE_URL+"/getFlights", flight);
+  createFlight(flight : {airline:String, source:String, destination:String, date:String}) {
+    return this.http.post(BASE_URL+"/addFlight", flight);
   }
 
   getFlight() {
