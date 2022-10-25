@@ -1,6 +1,6 @@
 # Spring Applications:
 
-This repository contains few Spring application. The prominent app is "Car lease system" that uses API gateways, Eureka server, micro services with Authentication. 
+This repository contains few Spring application. The prominent app is "Car lease system" that uses API gateways, Eureka server, micro services with Authentication. Find the code at: https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/CarLeaseSystem
 
 ## Micro-services:
 1. Caradmin : This app will be mainly used by Car owner / leasing company who maintains fleet of cars. APIs to manage car record. 
@@ -15,6 +15,8 @@ This repository contains few Spring application. The prominent app is "Car lease
  - API Gateway : https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/Gateway-Service
 
  - Eureka Server : https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/eServer
+ 
+ - All the code is consolidated to https://github.com/sanjayujjainkar/SpringBootTrainingSept/tree/master/CarLeaseSystem 
 
 
 ### Caradmin exposes following REST APIs:
