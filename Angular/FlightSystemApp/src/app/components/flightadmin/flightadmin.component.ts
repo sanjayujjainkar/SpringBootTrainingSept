@@ -15,8 +15,12 @@ export class FlightadminComponent implements OnInit {
   airline: Airline = new Airline();
   flights: Flight[] = [];
 
-  deleteFlight() {
-
+  deleteFlight1(flight: any,index: number) {
+    const observable = this.flighService.deleteFlight(flight);
+    observable.subscribe((response:any) => {
+      console.log(response);
+      this.flights.splice(index, 1)
+    })
   }
   
   // save() {

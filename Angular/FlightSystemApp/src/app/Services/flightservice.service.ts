@@ -17,7 +17,7 @@ export class FlightserviceService {
   }
 
   deleteFlight(flight:any) {
-    return this.http.delete(BASE_URL + flight.id)
+    return this.http.delete(BASE_URL+"/deleteFlight/" + flight.id)
   }
 
   constructor(public http: HttpClient) { }
