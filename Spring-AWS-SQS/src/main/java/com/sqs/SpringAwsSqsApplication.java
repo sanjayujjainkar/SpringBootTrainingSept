@@ -32,11 +32,11 @@ public class SpringAwsSqsApplication {
 	private String endpoint;
 	
 	@GetMapping("/send/{message}")
-	public void sendMessageToQueue(@PathVariable String msg) {
-		queueTemplate.send(endpoint, MessageBuilder.withPayload(msg).build());
+	public void sendMessageToQueue(@PathVariable String message) {
+		queueTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
 	}
 	
-	@SqsListener("queue-Sanjay")
+	@SqsListener("queue-Sanjay") //where queue-Sanjay is name of queue
 	public void loadMessageFromSQS(String msg) {
 		logger.info("Message from the Q is:{}", msg);
 	}
