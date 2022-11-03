@@ -12,6 +12,7 @@ import { FlightadminComponent } from './components/flightadmin/flightadmin.compo
 import { HttpClientModule } from '@angular/common/http';
 import { AirlineComponent } from './components/airline/airline.component';
 import { FlighcreateComponent } from './components/flighcreate/flighcreate.component';
+import { FlightbookingComponent } from './components/flightbooking/flightbooking.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FlighcreateComponent } from './components/flighcreate/flighcreate.compo
     NavbarComponent,
     FlightadminComponent,
     AirlineComponent,
-    FlighcreateComponent
+    FlighcreateComponent,
+    FlightbookingComponent
   ],
   imports: [
     BrowserModule,
