@@ -12,7 +12,7 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 public class AWSNSConfig {
 	
 	private static final String access_key = "AKIA4MFLODBGAT3YKLGX";
-	private static final String secret_key = "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";
+	private static final String secret_key = "";
 		
 	
 	@Primary
