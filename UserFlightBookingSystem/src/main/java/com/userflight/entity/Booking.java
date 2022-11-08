@@ -12,19 +12,26 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String user;
-	private int flightid;
+	private String airline;
+	private String source;
+	private String destination;
+	private String date;
 	private int seatcount;
 	
-	public Booking(int id, String user, int flightid, int seatcount) {
-		super();
-		this.id = id;
-		this.user = user;
-		this.flightid = flightid;
-		this.seatcount = seatcount;
-	}
 	
 	public Booking() {
 		
+	}
+
+	public Booking(int id, String user, String airline, String source, String destination, String date, int seatcount) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.airline = airline;
+		this.source = source;
+		this.destination = destination;
+		this.date = date;
+		this.seatcount = seatcount;
 	}
 
 	public int getId() {
@@ -43,12 +50,36 @@ public class Booking {
 		this.user = user;
 	}
 
-	public int getFlightid() {
-		return flightid;
+	public String getAirline() {
+		return airline;
 	}
 
-	public void setFlightid(int flightid) {
-		this.flightid = flightid;
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public int getSeatcount() {
@@ -58,6 +89,7 @@ public class Booking {
 	public void setSeatcount(int seatcount) {
 		this.seatcount = seatcount;
 	}
+	
 	
 	
 	

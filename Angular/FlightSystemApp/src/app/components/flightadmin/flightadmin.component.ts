@@ -23,20 +23,7 @@ export class FlightadminComponent implements OnInit {
     })
   }
   
-  // save() {
-  //   const observables = this.airlineService.createAirline(this.airline)
-  //   observables.subscribe(
-  //     (response: any) => {
-  //       console.log(response);
-  //     },
-  //     function (error) {
-  //       console.log(error);
-  //       alert('Something went wrong try again!');
-  //     }
-  //   );
-  // }
 
-  //constructor(public airlineService: AirlineService) { }
 
   constructor(public flighService: FlightserviceService) { }
 
@@ -53,36 +40,4 @@ export class FlightadminComponent implements OnInit {
 }
 
 
-// import { Component, OnInit } from '@angular/core';
-// import Student from 'src/app/entity/Student';
-// import { StudentsService } from 'src/app/Services/students.service';
-
-// @Component({
-//   selector: 'app-student-registration',
-//   templateUrl: './student-registration.component.html',
-//   styleUrls: ['./student-registration.component.css']
-// })
-// export class StudentRegistrationComponent implements OnInit {
-//   students: Student[] = [];
-
-//   deleteStudent(student, index) {
-//     const observable = this.studentService.deleteStudent(student);
-//     observable.subscribe((response:any) => {
-//       console.log(response);
-//       this.students.splice(index, 1)
-//     })
-//   }
-
-//   constructor(private studentService: StudentsService)  { }
-
-//   ngOnInit(): void {
-//     const promise = this.studentService.getStudent();
-//     promise.subscribe((response) => {
-//       console.log(response);
-//       this.students = response as Student[];
-//     })
-
-//   }
-
-// }
 

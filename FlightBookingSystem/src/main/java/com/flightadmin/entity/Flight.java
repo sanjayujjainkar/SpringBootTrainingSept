@@ -17,15 +17,17 @@ public class Flight {
 	private String source;
 	private String destination;
 	private String date;
+	private int fare;
 	
 
-	public Flight(int id, String airline, String source, String dest, String date) {
+	public Flight(int id, String airline, String source, String dest, String date, int fare) {
 		super();
 		this.id = id;
 		this.airline = airline;
 		this.source = source;
 		this.destination = dest;
 		this.date = date;
+		this.fare = fare;
 	}
 	
 	public Flight() {
@@ -77,5 +79,18 @@ public class Flight {
 		this.id = id;
 	}
 
+	public int getFare() {
+		return fare;
+	}
+
+	public void setFare(int fare) {
+		this.fare = fare;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return airline+":"+source+":"+destination+":"+date+":"+fare+"$";
+	}
 
 }

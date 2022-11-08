@@ -1,6 +1,7 @@
 package com.flightadmin.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.websocket.server.PathParam;
 
@@ -26,6 +27,12 @@ public class FlightAdminController {
 	@GetMapping("/admin/getFlights")
 	public List<Flight> getAllFlights() {
 		return flightService.getAllFlights();
+	}
+	
+	@GetMapping("/admin/getFlightStrArray")
+	public List<String> getAllFlightsAsStrArray() {
+		List<Flight> flights = flightService.getAllFlights();
+		return flights.stream().map(flight->flight.toString()).collect(Collectors.toList());
 	}
 	
 	@PostMapping("/admin/addFlight")

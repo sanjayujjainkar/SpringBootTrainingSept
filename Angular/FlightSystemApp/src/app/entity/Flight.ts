@@ -3,4 +3,5 @@ export default class Flight {
     source:String = "";
     destination:String = "";
     date: String = "";
+    fare: number = 1000;
 }
