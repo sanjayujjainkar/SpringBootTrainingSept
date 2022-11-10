@@ -6,6 +6,7 @@ import { CarbrokerComponent } from './components/carbroker/carbroker.component';
 import { CarleaseComponent } from './components/carlease/carlease.component';
 import { FlighcreateComponent } from './components/flighcreate/flighcreate.component';
 import { FlightadminComponent } from './components/flightadmin/flightadmin.component';
+import { FlightbookingComponent } from './components/flightbooking/flightbooking.component';
 import Airline from './entity/Airline';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
 {path:"carlease", component:CarleaseComponent},
 {path:"airline", component:AirlineComponent},
 {path:"flightcreate", component:FlighcreateComponent},
-{path:"flightadmin", component:FlightadminComponent}];
+{path:"flightadmin", component:FlightadminComponent},
+{path:"flightbooking", component:FlightbookingComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

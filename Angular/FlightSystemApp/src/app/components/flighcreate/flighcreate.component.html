@@ -35,6 +35,13 @@
             
         </div>
     </div>
+
+    <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Fare</label>
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="flight.fare"  type="number" class="form-control" id="validationCustom05" required>
+        <div class="invalid-feedback">
+        </div>
+    </div>
     
     
         <div style="text-align: center;" class="col-12">
