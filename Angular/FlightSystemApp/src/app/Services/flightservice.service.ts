@@ -27,6 +27,19 @@ export class FlightserviceService {
     return this.http.get(BASE_URL+"/getFlightStrArray");
   }
 
+  //=======================Flight Booking MGT================================
+  bookFlight(booking: {user:String, airline:String, source:String, destination:String, date:String, seatcount:number}) {
+    return this.http.post(BASE_URL_USER+"/addBooking", booking);
+  }
+
+  getBookings() {
+    return this.http.get(BASE_URL_USER+"/getBookings")
+  }
+
+  deleteBooking(booking: any) {
+    return this.http.delete(BASE_URL_USER+"/deleteBooking",booking.id)
+  }
+
   constructor(public http: HttpClient) { }
 }
 

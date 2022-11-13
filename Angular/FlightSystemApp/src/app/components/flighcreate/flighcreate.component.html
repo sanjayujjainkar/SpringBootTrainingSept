@@ -7,10 +7,12 @@
   <form class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Airline</label>
-        <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.airline" class="form-control" id="validationCustom01" placeholder="Airline Name" required>
-        <div class="valid-feedback">
-            
-        </div>
+        <select style="height:40px; width:450px;" [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.airline" class="form-control" id="validationCustom01" placeholder="Airline Name" required="true">
+            <option *ngFor="let airline of airLines" [ngValue]=airline.name>
+              {{airline.name}}
+              <!-- {{f.airline}}:{{f.source}}:{{f.destination}}:{{f.date}} -->
+            </option>
+          </select>
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">From Airport</label>

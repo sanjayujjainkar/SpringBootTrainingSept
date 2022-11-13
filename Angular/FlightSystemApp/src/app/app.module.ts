@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AirlineComponent } from './components/airline/airline.component';
 import { FlighcreateComponent } from './components/flighcreate/flighcreate.component';
 import { FlightbookingComponent } from './components/flightbooking/flightbooking.component';
+import { BookingMgtComponent } from './components/booking-mgt/booking-mgt.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FlightbookingComponent } from './components/flightbooking/flightbooking
     FlightadminComponent,
     AirlineComponent,
     FlighcreateComponent,
-    FlightbookingComponent
+    FlightbookingComponent,
+    BookingMgtComponent
   ],
   imports: [
     BrowserModule,

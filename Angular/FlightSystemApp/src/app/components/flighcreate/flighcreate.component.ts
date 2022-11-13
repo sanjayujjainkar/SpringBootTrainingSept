@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Airline from 'src/app/entity/Airline';
 import Flight from 'src/app/entity/Flight';
+import { AirlineService } from 'src/app/Services/airline.service';
 import { FlightserviceService } from 'src/app/Services/flightservice.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class FlighcreateComponent implements OnInit {
 
   flight : Flight = new Flight();
   name : String = "Sanjay";
+  airLines: Airline[] = []; 
 
 
   save() {
@@ -26,9 +29,14 @@ export class FlighcreateComponent implements OnInit {
     );
   }
 
-  constructor(public flightService: FlightserviceService) {}
+
+  constructor(public flightService: FlightserviceService, public airLineService: AirlineService) {}
 
   ngOnInit(): void {
-  }
-
+    const promise = this.airLineService.getAirlines();
+    promise.subscribe((response) => {
+    console.log(response);
+    this.airLines = response as Airline[];
+    }
+  )}
 }

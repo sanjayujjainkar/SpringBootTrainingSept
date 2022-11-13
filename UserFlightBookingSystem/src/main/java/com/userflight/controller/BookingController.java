@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import com.userflight.entity.Flight;
 import com.userflight.service.BookingService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class BookingController {
 	
 	private static final String URL = "http://flightadmin-service/admin/getFlights";

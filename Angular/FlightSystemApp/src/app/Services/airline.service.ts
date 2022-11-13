@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const BASE_URL = "http://localhost:8091/admin/students/"
+const BASE_URL = "http://localhost:8091/admin"
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,11 @@ const BASE_URL = "http://localhost:8091/admin/students/"
 export class AirlineService {
 
   createAirline(airline : {name:String, contactNumber:number, description:String}) {
-    return this.http.post(BASE_URL, airline);
+    return this.http.post(BASE_URL+"/addAirLine", airline);
   }
 
   getAirlines() {
-    return this.http.get(BASE_URL);
+    return this.http.get(BASE_URL+"/getAirLines");
   }
 
   deleteAirline(airline:any) {

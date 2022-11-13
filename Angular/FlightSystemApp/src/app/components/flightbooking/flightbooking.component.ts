@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Booking from 'src/app/entity/Booking';
 import Flight from 'src/app/entity/Flight';
+import FlightBookingDetail from 'src/app/entity/FlightBookingDetail';
 import { FlightserviceService } from 'src/app/Services/flightservice.service';
 
 
@@ -13,27 +14,40 @@ import { FlightserviceService } from 'src/app/Services/flightservice.service';
 export class FlightbookingComponent implements OnInit {
 
   booking: Booking = new Booking();
+  bookingDetail: FlightBookingDetail = new FlightBookingDetail();
   selectedFlight: String = "";
-  //flights : Flight[] = []; //String[] = []; 
   flights : String[] = []; 
   
   name : String = "Sanjay";
 
 
   save() {
-    // const observables = this.flightService.bookFlight(this.flight);
-    // observables.subscribe(
-    //   (response: any) => {
-    //     console.log(response);
-    //   },
-    //   function (error) {
-    //     console.log(error);
-    //     alert('Something went wrong try again!');
-    //   }
-    // );
-    console.log("selected Flight:"+this.selectedFlight);
-    alert("selected Flight:"+this.selectedFlight)
+    this.parseSelectedFlight();
+    const observables = this.flightService.bookFlight(this.bookingDetail);
+    observables.subscribe(
+      (response: any) => {
+         console.log(response);
+      },
+      function (error) {
+         console.log(error);
+         alert('Something went wrong try again!');
+      }
+    );
+    
   }
+
+  parseSelectedFlight() {
+    const array = this.booking.flight.split(":");
+    this.bookingDetail.user = "Sanjay";
+    this.bookingDetail.airline = array[0];
+    this.bookingDetail.source = array[1];
+    this.bookingDetail.destination = array[2];
+    this.bookingDetail.date = array[3];
+    this.bookingDetail.fare = parseInt(array[4]);
+    this.bookingDetail.seatcount = this.booking.seats;
+  }
+
+  
 
   allFlights() {
     

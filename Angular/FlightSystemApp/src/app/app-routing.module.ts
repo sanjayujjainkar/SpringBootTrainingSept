@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './components/airline/airline.component';
+import { BookingMgtComponent } from './components/booking-mgt/booking-mgt.component';
 import { CaradminComponent } from './components/caradmin/caradmin.component';
 import { CarbrokerComponent } from './components/carbroker/carbroker.component';
 import { CarleaseComponent } from './components/carlease/carlease.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
 {path:"airline", component:AirlineComponent},
 {path:"flightcreate", component:FlighcreateComponent},
 {path:"flightadmin", component:FlightadminComponent},
-{path:"flightbooking", component:FlightbookingComponent}];
+{path:"flightbooking", component:FlightbookingComponent},
+{path:"bookingMgt", component:BookingMgtComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
