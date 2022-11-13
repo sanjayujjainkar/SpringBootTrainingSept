@@ -8,7 +8,7 @@ const BASE_URL = "http://localhost:8091/admin"
 })
 export class AirlineService {
 
-  createAirline(airline : {name:String, contactNumber:number, description:String}) {
+  createAirline(airline : {airlineName:String, contactNumber:number, description:String}) {
     return this.http.post(BASE_URL+"/addAirLine", airline);
   }
 

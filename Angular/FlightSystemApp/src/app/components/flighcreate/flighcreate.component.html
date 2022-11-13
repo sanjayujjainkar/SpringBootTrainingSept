@@ -8,8 +8,8 @@
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Airline</label>
         <select style="height:40px; width:450px;" [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="flight.airline" class="form-control" id="validationCustom01" placeholder="Airline Name" required="true">
-            <option *ngFor="let airline of airLines" [ngValue]=airline.name>
-              {{airline.name}}
+            <option *ngFor="let airline of airLines" [ngValue]=airline.airlineName>
+              {{airline.airlineName}}
               <!-- {{f.airline}}:{{f.source}}:{{f.destination}}:{{f.date}} -->
             </option>
           </select>

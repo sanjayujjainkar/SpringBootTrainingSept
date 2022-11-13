@@ -1,5 +1,5 @@
 export default class Airline {
-    name:String = "";
+    airlineName:String = "";
     contactNumber: number = 0;
     description: String = "";
 }
