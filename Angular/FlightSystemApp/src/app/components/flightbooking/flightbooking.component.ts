@@ -19,6 +19,7 @@ export class FlightbookingComponent implements OnInit {
   flights : String[] = []; 
   user: any = sessionStorage.getItem("USER");
   name : String = "Sanjay";
+  pnr: number = 0;
 
 
   save() {
@@ -33,7 +34,7 @@ export class FlightbookingComponent implements OnInit {
          alert('Something went wrong try again!');
       }
     );
-    
+    this.generatePNR();
   }
 
   parseSelectedFlight() {
@@ -47,7 +48,14 @@ export class FlightbookingComponent implements OnInit {
     this.bookingDetail.seatcount = this.booking.seats;
   }
 
-  
+  generatePNR() {
+    var d = new Date(); // for now
+    d.getHours(); // => 9
+    d.getMinutes(); // =>  30
+    d.getSeconds(); // => 51
+    var time = d.getUTCMilliseconds;
+    this.pnr = Math.floor((Math.random() * 10000000) + 1);//time.toString; //d.getDay+d.getHours+d.getMinutes+d.getSeconds;
+  }
 
   allFlights() {
     
