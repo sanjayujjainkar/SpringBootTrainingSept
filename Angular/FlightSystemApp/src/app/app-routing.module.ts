@@ -20,7 +20,8 @@ const routes: Routes = [
 {path:"flightbooking", component:FlightbookingComponent},
 {path:"login", component:LoginComponent},
 {path:"bookingMgt", component:BookingMgtComponent},
-{path:"", component:LoginComponent}];
+{path:"", component:LoginComponent},
+{path:"logout", component:LoginComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
