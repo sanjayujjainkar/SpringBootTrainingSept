@@ -15,6 +15,7 @@ import { AirlineComponent } from './components/airline/airline.component';
 import { FlighcreateComponent } from './components/flighcreate/flighcreate.component';
 import { FlightbookingComponent } from './components/flightbooking/flightbooking.component';
 import { BookingMgtComponent } from './components/booking-mgt/booking-mgt.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BookingMgtComponent } from './components/booking-mgt/booking-mgt.compon
     AirlineComponent,
     FlighcreateComponent,
     FlightbookingComponent,
-    BookingMgtComponent
+    BookingMgtComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
