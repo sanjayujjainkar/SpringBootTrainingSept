@@ -17,7 +17,7 @@ export class FlightbookingComponent implements OnInit {
   bookingDetail: FlightBookingDetail = new FlightBookingDetail();
   selectedFlight: String = "";
   flights : String[] = []; 
-  
+  user: any = sessionStorage.getItem("USER");
   name : String = "Sanjay";
 
 

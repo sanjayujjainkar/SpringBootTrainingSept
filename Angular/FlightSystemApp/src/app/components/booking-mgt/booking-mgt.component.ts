@@ -10,6 +10,7 @@ import { FlightserviceService } from 'src/app/Services/flightservice.service';
 export class BookingMgtComponent implements OnInit {
 
   bookings: FlightBookingDetail[] = [];
+  user: any = sessionStorage.getItem("USER");
 
   deleteBooking(booking: any,index: number) {
      const observable = this.flightService.deleteBooking(booking)

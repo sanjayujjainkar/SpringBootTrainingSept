@@ -19,7 +19,8 @@ const routes: Routes = [
 {path:"flightadmin", component:FlightadminComponent},
 {path:"flightbooking", component:FlightbookingComponent},
 {path:"login", component:LoginComponent},
-{path:"bookingMgt", component:BookingMgtComponent}];
+{path:"bookingMgt", component:BookingMgtComponent},
+{path:"", component:LoginComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

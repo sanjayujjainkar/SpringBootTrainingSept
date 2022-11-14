@@ -10,6 +10,7 @@ import { AirlineService } from 'src/app/Services/airline.service';
 export class AirlineComponent implements OnInit {
 
   airline: Airline = new Airline();
+  user: any = sessionStorage.getItem("USER");
 
   save() {
     const observables = this.airlineService.createAirline(this.airline)

@@ -14,6 +14,7 @@ export class FlighcreateComponent implements OnInit {
   flight : Flight = new Flight();
   name : String = "Sanjay";
   airLines: Airline[] = []; 
+  user: any = sessionStorage.getItem("USER");
 
 
   save() {
