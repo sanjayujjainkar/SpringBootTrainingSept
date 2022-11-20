@@ -14,6 +14,7 @@ export class FlightadminComponent implements OnInit {
 
   airline: Airline = new Airline();
   flights: Flight[] = [];
+  user: any = sessionStorage.getItem("USER");
 
   deleteFlight1(flight: any,index: number) {
     const observable = this.flighService.deleteFlight(flight);

@@ -1,4 +1,5 @@
-<p>flightbooking works!</p>
+<app-navbar></app-navbar>
+<h1>Welcome {{user}} !!</h1>
 
 <h1 style="text-align: center; background-color: #f7b285" class="display-1">Book a flight</h1>
 <br/>
@@ -25,7 +26,8 @@
     <input [ngModelOptions]="{standalone: true}" type="text" [(ngModel)]="booking.seats" class="form-control" id="validationCustom01" placeholder="select no of seats" required>
 </div>
   
-  <p> you have selected {{booking.flight}} and seats: {{booking.seats}}</p>
+  <p> you have selected {{booking.flight}} and seats: {{booking.seats}}</p> <br>
+  <p> PNR is: {{pnr}}</p>
   
   
   <div style="text-align: center;" class="col-12">

@@ -16,6 +16,7 @@ public class Booking {
 	private String source;
 	private String destination;
 	private String date;
+	private int fare;
 	private int seatcount;
 	
 	
@@ -23,7 +24,7 @@ public class Booking {
 		
 	}
 
-	public Booking(int id, String user, String airline, String source, String destination, String date, int seatcount) {
+	public Booking(int id, String user, String airline, String source, String destination, String date, int fare, int seatcount) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -31,6 +32,7 @@ public class Booking {
 		this.source = source;
 		this.destination = destination;
 		this.date = date;
+		this.fare = fare;
 		this.seatcount = seatcount;
 	}
 
@@ -89,9 +91,14 @@ public class Booking {
 	public void setSeatcount(int seatcount) {
 		this.seatcount = seatcount;
 	}
-	
-	
-	
+
+	public int getFare() {
+		return fare;
+	}
+
+	public void setFare(int fare) {
+		this.fare = fare;
+	}
 	
 
 }
